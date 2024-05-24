@@ -31,10 +31,10 @@ namespace AuctionService.Data.Migrations
                     b.Property<DateTime>("AuctionEnd")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime>("CreateAt")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int?>("CurrentHightBid")
+                    b.Property<int?>("CurrentHighBid")
                         .HasColumnType("integer");
 
                     b.Property<int>("ReservePrice")
@@ -49,7 +49,7 @@ namespace AuctionService.Data.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Winner")
