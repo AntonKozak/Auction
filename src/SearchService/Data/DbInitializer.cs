@@ -13,8 +13,9 @@ public class DbInitializer
     {
         try
         {
-            var connectionString = app.Configuration.GetConnectionString("MongoDbConnection");
-            await DB.InitAsync("SearchDb", MongoClientSettings.FromConnectionString(connectionString));
+
+            await DB.InitAsync("SearchDb", MongoClientSettings
+            .FromConnectionString(app.Configuration.GetConnectionString("MongoDbConnection")));
 
             await DB.Index<Item>()
                 .Key(x => x.Make, KeyType.Text)
@@ -26,18 +27,17 @@ public class DbInitializer
 
             if (count == 0)
             {
-                using var scope = app.Services.CreateScope();
-                var httpClient = scope.ServiceProvider.GetRequiredService<AuctionSvcHttpClient>();
-                var items = await httpClient.GetItemsForSearchDb();
+                Console.WriteLine("No data found. Seeding data to database...");
+                var itemData = await File.ReadAllTextAsync("Data/auction.json");
 
-                Console.WriteLine($"Items from AuctionService: {items.Count}");
-
-                if (items.Count > 0)
+                var opitions = new JsonSerializerOptions
                 {
-                    await DB.SaveAsync(items);
-                }
+                    PropertyNameCaseInsensitive = true
+                };
 
-                Console.WriteLine($"Items in SearchDb: {await DB.CountAsync<Item>()}");
+                var items = JsonSerializer.Deserialize<List<Item>>(itemData, opitions);
+
+                await DB.SaveAsync(items);
             }
         }
         catch (Exception ex)

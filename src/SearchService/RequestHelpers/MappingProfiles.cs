@@ -1,8 +1,7 @@
 using AutoMapper;
 using Contracts;
-using SearchService;
 
-namespace SearchService.RequestHelpers;
+namespace SearchService;
 
 public class MappingProfiles : Profile
 {

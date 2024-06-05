@@ -61,13 +61,14 @@ public class AuctionController : ControllerBase
         var auction = _mapper.Map<Auction>(auctionDto);
 
         //ToDO: add current user as seller
+        auction.Seller = "Pelle Röv";
+
         _context.Auctions.Add(auction);
 
+        var newAuction = _mapper.Map<AuctionDto>(auction);
+        await _pulishEndpoint.Publish(_mapper.Map<AuctionCreated>(newAuction));
+
         var result = await _context.SaveChangesAsync() > 0;
-
-        var newAuction = _mapper.Map<AuctionCreated>(auction);
-
-        await _pulishEndpoint.Publish(_mapper.Map<AuctionCreated>(auction));
 
         if (!result)
         {
@@ -75,7 +76,7 @@ public class AuctionController : ControllerBase
         }
 
         return CreatedAtAction(nameof(GetAuctionById),
-        new { id = auction.Id }, _mapper.Map<AuctionDto>(auction));
+        new { auction.Id }, newAuction);
     }
 
     [HttpPut("{id}")]

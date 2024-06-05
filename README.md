@@ -78,6 +78,8 @@ DTOs.
 
 Build the image.  
 docker compose up -d.
+Delete the image.
+docker compose down.
 
 ### Auction Service
 
