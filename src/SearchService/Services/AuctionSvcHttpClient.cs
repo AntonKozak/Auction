@@ -1,5 +1,5 @@
 using MongoDB.Entities;
-using SearchService.Models;
+using SearchService;
 
 namespace SearchService.Services;
 
