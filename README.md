@@ -37,7 +37,7 @@ git config --global alias.lgb "log --all --decorate --oneline --graph".
 We can now use the command by typing.  
 git lgb.
 
-#### Auction-house Architecture
+## Auction-house Architecture
 
 ![Auction](Auction-house_Architecture.png)
 
@@ -74,14 +74,14 @@ API Endpoints.
 Models.  
 DTOs.
 
-### Docker
+## Docker
 
 Build the image.  
 docker compose up -d.
 Delete the image.
 docker compose down.
 
-#### Identity Server Duende
+## Identity Server Duende
 
 ¤ adding Duende IdentityServer to an ASP.NET Core application.
 ¤ configuring Duende IdentityServer.
@@ -99,7 +99,7 @@ dotnet new isaspid -o src/IdentityService.
 And project is created. Add to SLN.
 dotnet sln add src/IdentityService.
 
-#### Auction Service
+## Auction Service
 
 Infrastructure .  
 .Net Web API .
@@ -114,7 +114,7 @@ Microsoft.EntityFrameworkCore.Design .
 Npgsql.EntityFrameworkCore.PostgreSQL .
 MassTransit.RabbitMQ .
 
-##### Search Service
+## Search Service
 
 Infrastructure.
 .Net Web API.
