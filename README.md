@@ -81,7 +81,25 @@ docker compose up -d.
 Delete the image.
 docker compose down.
 
-### Auction Service
+### Identity Server Duende
+
+¤ adding Duende IdentityServer to an ASP.NET Core application.
+¤ configuring Duende IdentityServer.
+¤ issuing tokens for various clients.
+¤ securing web applications and APIs.
+¤ adding support for EntityFramework based configuration.
+¤ adding support for ASP.NET Identity.
+
+Install our templates:
+dotnet new install Duende.IdentityServer.Templates .
+
+The template "Duende IdentityServer with ASP.NET Core Identity" to create.
+dotnet new isaspid -o src/IdentityService.
+
+And project is created. Add to SLN.
+dotnet sln add src/IdentityService.
+
+#### Auction Service
 
 Infrastructure .  
 .Net Web API .
@@ -96,7 +114,7 @@ Microsoft.EntityFrameworkCore.Design .
 Npgsql.EntityFrameworkCore.PostgreSQL .
 MassTransit.RabbitMQ .
 
-#### Search Service
+##### Search Service
 
 Infrastructure.
 .Net Web API.
@@ -111,5 +129,3 @@ MassTransit.RabbitMQ.
 Queries handled.
 
 Search - Gets a paged list of auctions based on query params. Returns list of Item.
-
-#####
