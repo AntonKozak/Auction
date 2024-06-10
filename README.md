@@ -12,7 +12,7 @@ dotnet sln add src/AuctionService.
 Give inforamtion about the request(query) and response
 "Microsoft.AspNetCore": "Information
 
-# Github
+## Github
 
 Some information about the github repository and how to use it..
 
@@ -28,7 +28,7 @@ git branch "branch_name".
 Show all branches.  
 git branch.
 
-# Create an alias for a command :
+### Create an alias for a command
 
 git config --global alias."alias_name" "command".  
 Exempel:.  
@@ -37,11 +37,11 @@ git config --global alias.lgb "log --all --decorate --oneline --graph".
 We can now use the command by typing.  
 git lgb.
 
-# Auction-house Architecture
+#### Auction-house Architecture
 
 ![Auction](Auction-house_Architecture.png)
 
-# Infrastructure
+## Infrastructure
 
 .Net Web API.  
 Postgres DB.  
@@ -74,14 +74,14 @@ API Endpoints.
 Models.  
 DTOs.
 
-## Docker
+### Docker
 
 Build the image.  
 docker compose up -d.
 Delete the image.
 docker compose down.
 
-### Identity Server Duende
+#### Identity Server Duende
 
 ¤ adding Duende IdentityServer to an ASP.NET Core application.
 ¤ configuring Duende IdentityServer.
