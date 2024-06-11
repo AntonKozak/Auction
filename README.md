@@ -1,6 +1,8 @@
 # Auction-house
 
-Microservices based app using .Net, NextJS, IdentityServer, RabbitMQ running on Docker and Kubernetes.
+Microservices based app using .Net, Razor Pages, ASP.NET, NextJS, IdentityServer, RabbitMQ running on Docker and Kubernetes.
+
+## .Net
 
 Creating solution file.  
 1 dotnet new sln -n Auction-house.  
@@ -11,6 +13,9 @@ dotnet sln add src/AuctionService.
 
 Give inforamtion about the request(query) and response
 "Microsoft.AspNetCore": "Information
+
+The Entity Framework tools version '8.0.3' is older than that of the runtime '8.0.6'. Update the tools for the latest features and bug fixes.
+dotnet tool update dotnet-ef -g .
 
 ## Github
 
@@ -78,6 +83,7 @@ DTOs.
 
 Build the image.  
 docker compose up -d.
+
 Delete the image.
 docker compose down.
 
