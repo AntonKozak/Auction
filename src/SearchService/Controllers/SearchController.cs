@@ -64,7 +64,7 @@ public class SearchController : ControllerBase
             *page count = how many pages of items total 
             *total count = total items in the database
             */
-            result = result.Results,
+            results = result.Results,
             pageCount = result.PageCount,
             totalCount = result.TotalCount
         });
