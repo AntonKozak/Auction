@@ -19,15 +19,12 @@ public class CustomProfileService : IProfileService
     {
         //User ID
         var user = await _userManager.GetUserAsync(context.Subject);
-        if (user == null)
-        {
-            throw new ArgumentException("User not found");
-        }
-        var existingClaims = await _userManager.GetClaimsAsync(user);
+
+        var existingClaims = await _userManager.GetClaimsAsync(user!);
 
         var claims = new List<Claim>
         {
-            new Claim("username", user.UserName!),
+            new Claim("username", user!.UserName!),
         };
 
         context.IssuedClaims.AddRange(claims);

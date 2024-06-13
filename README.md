@@ -87,6 +87,16 @@ docker compose up -d.
 Delete the image.
 docker compose down.
 
+The command .
+docker build -f src/AuctionService/Dockerfile -t testing123 .
+is used to build a Docker image from a specified Dockerfile.
+
+The command.
+docker compose build auction-svc.
+docker compose build search-svc.
+is used to build a specific service (auction-svc, search-svc) defined in a Docker Compose file.
+And after that " docker compose up -d " to run the service.
+
 ## Identity Server Duende
 
 ¤ adding Duende IdentityServer to an ASP.NET Core application.
